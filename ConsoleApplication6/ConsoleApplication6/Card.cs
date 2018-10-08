@@ -9,6 +9,7 @@ namespace ConsoleApplication6
 
         public static Dictionary<int, string> SuitDictionary = new Dictionary<int, string>
         {
+            // Задаём масти
             { 0, "Чирва"  },
             { 1, "Пика"   },
             { 2, "Буба"   },
@@ -17,6 +18,7 @@ namespace ConsoleApplication6
 
         public static Dictionary<int, string> RankDictionary = new Dictionary<int, string>
         {
+            // Задаём ранги
             { 0, "6"      },
             { 1, "7"      },
             { 2, "8"      },
@@ -28,7 +30,7 @@ namespace ConsoleApplication6
             { 8, "Туз"    }
         };
 
-        static public Hand getHand(bool[,] deck)
+        static public Hand getHand(bool[,] deck) // Получаем данные о комбинации карт в руке
         {
             var hand = new Hand();
 
@@ -50,7 +52,7 @@ namespace ConsoleApplication6
         }
     }
 
-    public class Card
+    public class Card // Класс карты
     {
         public int suit;
         public int rank;
@@ -62,12 +64,12 @@ namespace ConsoleApplication6
         }
     }
 
-    public class Hand
+    public class Hand // Класс руки
     {
-        public List<Card> cards = new List<Card>(); 
+        public List<Card> cards = new List<Card>(); // Создаём карты
         public int weight = 0;
 
-        public void calculateWeight(int trump)
+        public void calculateWeight(int trump) // Расчитываем вес карты
         {
             weight = -1;
 
