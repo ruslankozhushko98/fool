@@ -17,8 +17,18 @@ namespace ConsoleApplication6
                 }
             }
 
+            Console.WriteLine("Макс. кол-во игроков: 6");
             Console.WriteLine("Введите кол-во игроков: ");
+
             int amountPlayers = Convert.ToInt32(Console.ReadLine());
+
+            if (amountPlayers > 6)
+            {
+                Console.WriteLine("Недопустимое кол-во игроков!");
+                Console.ReadKey();
+                return;
+            }
+
             int trump;
             
             List<Hand> hands = new List<Hand>();
